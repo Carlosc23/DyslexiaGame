@@ -66,11 +66,16 @@ public class Menu_Controller : MonoBehaviour {
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay4);
     }
 	
-	public void Back(){
+	public void BackToMain(){
         _audioSource.PlayOneShot(_audioClip);
-        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
-        UnityEngine.SceneManagement.SceneManager.LoadScene(PlayerPrefs.GetString("_LastScene").ToString());
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Standalone");
     }
+	
+	public void BackToMode(){
+        _audioSource.PlayOneShot(_audioClip);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Mode");
+    }
+	
 	
 	
     public void Mute () {
