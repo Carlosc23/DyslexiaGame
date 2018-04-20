@@ -175,125 +175,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &36127504
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1010585507498028, guid: 6ec64b4c4066fda49891d51887ba93b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1516730756}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1516730757}
-  - component: {fileID: 36127506}
-  - component: {fileID: 36127505}
-  m_Layer: 5
-  m_Name: _MusicPlayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &36127505
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 82968306540234836, guid: 6ec64b4c4066fda49891d51887ba93b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1516730756}
-  m_GameObject: {fileID: 36127504}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!114 &36127506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114811095409020904, guid: 6ec64b4c4066fda49891d51887ba93b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1516730756}
-  m_GameObject: {fileID: 36127504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b327cf93e7a2e047bcde3fd0b96fbeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioTracks:
-  - {fileID: 8300000, guid: 81a073c32b2377e4d88a16a31d15f298, type: 3}
-  _playTracks: 1
-  _nextTrack: 0
-  _prevTrack: 0
-  _loopTrack: 0
-  _playingTrack: 0
-  _isMute: 0
 --- !u!1 &646421040
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9999237, y: 0}
+  m_AnchoredPosition: {x: -87, y: 0}
   m_SizeDelta: {x: 324, y: 109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877734827
@@ -716,7 +597,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1313609753}
-        m_MethodName: EnterLevels
+        m_MethodName: EnterLevelm1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -740,7 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47794116, g: 0.71916837, b: 1, a: 1}
+  m_Color: {r: 0.9764706, g: 0.70980394, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -899,6 +780,7 @@ MonoBehaviour:
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
+  _sceneToLoadOnPlay4: Level 1
   _webpageURL: http://www.alpaca.studio
   _soundButtons: []
   _audioClip: {fileID: 0}
@@ -980,7 +862,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1313609753}
-        m_MethodName: EnterLevels
+        m_MethodName: EnterLevelm2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1004,7 +886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47794116, g: 0.71916837, b: 1, a: 1}
+  m_Color: {r: 0.9764706, g: 0.70980394, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1066,22 +948,12 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ec64b4c4066fda49891d51887ba93b3, type: 2}
-  m_RootGameObject: {fileID: 36127504}
   m_IsPrefabParent: 0
---- !u!4 &1516730757
+--- !u!4 &1516730757 stripped
 Transform:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 4481103903409266, guid: 6ec64b4c4066fda49891d51887ba93b3,
     type: 2}
   m_PrefabInternal: {fileID: 1516730756}
-  m_GameObject: {fileID: 36127504}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 746802233}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1739334391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,7 +1139,7 @@ RectTransform:
   m_GameObject: {fileID: 2070267601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.81, y: 0.69, z: 1}
   m_Children: []
   m_Father: {fileID: 746802233}
   m_RootOrder: 0
@@ -1296,7 +1168,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 81689118786cf124b9301b1d140ff220, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51568cb8e0c599f4fae2acbe0edd53a3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

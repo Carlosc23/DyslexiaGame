@@ -9,6 +9,8 @@ public class Menu_Controller : MonoBehaviour {
 	public string _sceneToLoadOnPlay = "Mode";
     public string _sceneToLoadOnPlay2 = "Record";
     public string _sceneToLoadOnPlay3 = "Level";
+	public string _sceneToLoadOnPlay4 = "Level 1";
+
     [Tooltip("_webpageURL defines the URL that will be opened when users click on your branding icon")]
 	public string _webpageURL = "http://www.alpaca.studio";
 	[Tooltip("_soundButtons define the SoundOn[0] and SoundOff[1] Button objects.")]
@@ -47,11 +49,18 @@ public class Menu_Controller : MonoBehaviour {
         PlayerPrefs.SetString("_LastScene", scene.name);
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay2);
     }
-    public void EnterLevels(){
+    public void EnterLevelm1(){
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay3);
     }
+	
+	public void EnterLevelm2(){
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay4);
+    }
+	
     public void Mute () {
 		_audioSource.PlayOneShot(_audioClip);
 		_soundButtons[0].interactable = true;
