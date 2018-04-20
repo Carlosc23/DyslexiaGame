@@ -42,24 +42,36 @@ public class Menu_Controller : MonoBehaviour {
 	public void PlayGame () {
 		_audioSource.PlayOneShot(_audioClip);
 		PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
 		UnityEngine.SceneManagement.SceneManager.LoadScene("Mode");
 	}
 	public void EnterRecords(){
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay2);
     }
     public void EnterLevelm1(){
         _audioSource.PlayOneShot(_audioClip);
+		
         PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay3);
     }
 	
 	public void EnterLevelm2(){
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay4);
     }
+	
+	public void Back(){
+        _audioSource.PlayOneShot(_audioClip);
+        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene(PlayerPrefs.GetString("_LastScene").ToString());
+    }
+	
 	
     public void Mute () {
 		_audioSource.PlayOneShot(_audioClip);
