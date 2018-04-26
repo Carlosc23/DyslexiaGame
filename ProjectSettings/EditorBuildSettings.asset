@@ -23,3 +23,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Menu_Template/Examples/Level 1.unity
     guid: 8c702ac2a51c39141bd868c77eecc5f6
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L.unity
+    guid: 93ee4725c88f6b741abef78ee38b33c5
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 1.unity
+    guid: 84f3ee69660d79a4db2ce41a0ff5be9b
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 2.unity
+    guid: 79246d6e2e16c33439638afcb0f1750b
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 3.unity
+    guid: 8f44f29533c6c0048a769fde8b4e8c82
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 4.unity
+    guid: d75388a9f630b2840b9f81481f383734
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/Level 2.unity
+    guid: 89062934e65c4e54f9cce3377d9633af

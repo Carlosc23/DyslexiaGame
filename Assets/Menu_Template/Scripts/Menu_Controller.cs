@@ -9,7 +9,7 @@ public class Menu_Controller : MonoBehaviour {
 	public string _sceneToLoadOnPlay = "Mode";
     public string _sceneToLoadOnPlay2 = "Record";
     public string _sceneToLoadOnPlay3 = "Level";
-	public string _sceneToLoadOnPlay4 = "Level 1";
+	public string _sceneToLoadOnPlay4 = "Level 2";
 
     [Tooltip("_webpageURL defines the URL that will be opened when users click on your branding icon")]
 	public string _webpageURL = "http://www.alpaca.studio";
@@ -63,7 +63,49 @@ public class Menu_Controller : MonoBehaviour {
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
-        UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay4);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level 2");
+    }
+	
+	public void EnterInventadasFacil1(){
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("M1 Facil L");
+    }
+	
+	public void EnterInventadasFacil2(){
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("M1 Facil L 1");
+    }
+	
+	public void EnterInventadasFacil3(){
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("M1 Facil L 2");
+    }
+	
+	public void EnterInventadasFacil4(){
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("M1 Facil L 3");
+    }
+	
+	public void EnterInventadasFacil5(){
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("M1 Facil L 4");
+    }
+	
+	public void EnterInventadasFacilRecord(){
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
     }
 	
 	public void BackToMain(){
