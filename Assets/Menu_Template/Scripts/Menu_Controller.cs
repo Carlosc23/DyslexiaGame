@@ -109,6 +109,7 @@ public class Menu_Controller : MonoBehaviour {
 		_soundButtons[0].interactable = true;
 		_soundButtons[1].interactable = false;
 		PlayerPrefs.SetInt("_Mute", 1);
+		print(PlayerPrefs.GetInt("_Mute"));
 	}
 	
 	public void Unmute () {
@@ -116,6 +117,30 @@ public class Menu_Controller : MonoBehaviour {
 		_soundButtons[0].interactable = false;
 		_soundButtons[1].interactable = true;
 		PlayerPrefs.SetInt("_Mute", 0);
+		print(PlayerPrefs.GetInt("_Mute"));
+	}
+	
+	
+	public void bmute(){
+		
+		print(PlayerPrefs.GetInt("_Mute"));
+		print ("estoy en bmute");
+		if (PlayerPrefs.GetInt("_Mute")==0){
+			_audioSource.PlayOneShot(_audioClip);
+		
+		PlayerPrefs.SetInt("_Mute", 1);
+		print(PlayerPrefs.GetInt("_Mute"));
+			
+		}
+		else if (PlayerPrefs.GetInt("_Mute")==1){
+			_audioSource.PlayOneShot(_audioClip);
+		
+		PlayerPrefs.SetInt("_Mute", 0);
+		print(PlayerPrefs.GetInt("_Mute"));
+			
+		}
+		
+		
 	}
 	
 	public void QuitGame () {
