@@ -15,6 +15,69 @@ EditorBuildSettings:
     path: Assets/Menu_Template/Examples/Mode.unity
     guid: 039de377be33a8e4abd2689564b54e1d
   - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 17.unity
+    guid: 530e55a97c26b4345b099e143950364b
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 15.unity
+    guid: e452da73cd548d24290ebb290e255061
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 14.unity
+    guid: 4f80cbc0487e4774a9154d31d4d30ddc
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 16.unity
+    guid: e4d705f5e427c4e41b6f699eec80cf36
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 18.unity
+    guid: a63817b23876e384c99b752c163481a6
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 19.unity
+    guid: d0e7710c42961ae4a9dd699ae8c756b4
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 20.unity
+    guid: 10d2ca88a4bda97458eabe5137d0b258
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 21.unity
+    guid: ad29265b809d95f4abba365329c1420f
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 22.unity
+    guid: 529db664afcad5e45a43e5a7bb575fd8
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 23.unity
+    guid: 7519336eda494dc4a829381e88913b0b
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 24.unity
+    guid: 6f80c5a7966da1244a9aef655ce23701
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 25.unity
+    guid: 37710000d0e24da4386b24fc6ebc8c68
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 8.unity
+    guid: 283f7ddf4fd5e63409848f21c38885f8
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 6.unity
+    guid: b4c8b9fc238d8f54893c2598375dc59b
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 7.unity
+    guid: 4a87289ba3d39974ca3cc395fdda3e05
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 9.unity
+    guid: 005aacbe7b8d9944b8511554d2dfca56
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 5.unity
+    guid: 4b388c2c64ffc5d42aff3e771971bb2b
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 10.unity
+    guid: 248b07ef8fc10874daa7d3da06b55de7
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 11.unity
+    guid: 6d044f04bda5cf343b96251320e8510d
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 12.unity
+    guid: 842e85ae9a7468f4ab887919a6a83c6e
+  - enabled: 1
+    path: Assets/Menu_Template/Examples/M1 Facil L 13.unity
+    guid: 03e8fb5b904617547b416caa8ac9efe6
+  - enabled: 1
     path: Assets/Menu_Template/Examples/Record.unity
     guid: 082a873f55663144a9f24ac6493f51a9
   - enabled: 1

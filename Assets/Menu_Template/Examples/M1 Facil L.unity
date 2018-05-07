@@ -979,6 +979,33 @@ MonoBehaviour:
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
   _sceneToLoadOnPlay4: Level 1
+  words:
+  - M1 Facil L
+  - M1 Facil L 1
+  - M1 Facil L 2
+  - M1 Facil L 3
+  - M1 Facil L 4
+  - M1 Facil L 5
+  - M1 Facil L 6
+  - M1 Facil L 7
+  - M1 Facil L 8
+  - M1 Facil L 9
+  - M1 Facil L 10
+  - M1 Facil L 11
+  - M1 Facil L 12
+  - M1 Facil L 13
+  - M1 Facil L 14
+  - M1 Facil L 15
+  - M1 Facil L 16
+  - M1 Facil L 17
+  - M1 Facil L 18
+  - M1 Facil L 19
+  - M1 Facil L 20
+  - M1 Facil L 21
+  - M1 Facil L 22
+  - M1 Facil L 23
+  - M1 Facil L 24
+  - M1 Facil L 25
   _webpageURL: http://www.alpaca.studio
   _soundButtons: []
   _audioClip: {fileID: 0}
@@ -1060,7 +1087,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1313609753}
-        m_MethodName: EnterInventadasFacil2
+        m_MethodName: EnterInventadasFacil1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1343,6 +1370,33 @@ MonoBehaviour:
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
   _sceneToLoadOnPlay4: Level 1
+  words:
+  - M1 Facil L
+  - M1 Facil L 1
+  - M1 Facil L 2
+  - M1 Facil L 3
+  - M1 Facil L 4
+  - M1 Facil L 5
+  - M1 Facil L 6
+  - M1 Facil L 7
+  - M1 Facil L 8
+  - M1 Facil L 9
+  - M1 Facil L 10
+  - M1 Facil L 11
+  - M1 Facil L 12
+  - M1 Facil L 13
+  - M1 Facil L 14
+  - M1 Facil L 15
+  - M1 Facil L 16
+  - M1 Facil L 17
+  - M1 Facil L 18
+  - M1 Facil L 19
+  - M1 Facil L 20
+  - M1 Facil L 21
+  - M1 Facil L 22
+  - M1 Facil L 23
+  - M1 Facil L 24
+  - M1 Facil L 25
   _webpageURL: http://www.alpaca.studio
   _soundButtons: []
   _audioClip: {fileID: 0}
