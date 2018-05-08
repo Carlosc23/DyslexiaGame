@@ -68,7 +68,7 @@ public class Menu_Controller : MonoBehaviour {
 	
 	public void Count(){
 	//TEngo que poner esto dentro del de las dificiles
-		if (PlayerPrefs.GetInt("_DIF")==1){
+		if (PlayerPrefs.GetInt("_DIF")==2){
 			if(TimeLeft>0){
 				TimeLeft--;
 				print (TimeLeft);
@@ -144,7 +144,7 @@ public class Menu_Controller : MonoBehaviour {
     }
 	
 	public void EnterInventadasDificil1(){
-		Dificultad=1;
+		Dificultad=2;
 		//StartCounting();
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
