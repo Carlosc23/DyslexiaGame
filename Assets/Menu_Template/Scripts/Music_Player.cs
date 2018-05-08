@@ -24,7 +24,7 @@ public class Music_Player : MonoBehaviour {
 	public int _playingTrack;
 	[Tooltip("_isMute returns the status of muting function in the Sound_Controller.")]
 	public bool _isMute = false;
-	
+		
 	void Awake () {		
 		_audioSource = GetComponent<AudioSource>();
 		_audioSource.clip = _audioTracks[0];
@@ -48,12 +48,19 @@ public class Music_Player : MonoBehaviour {
 		if(_nextTrack){ NextTrack(); }
 		if(_prevTrack){ PreviousTrack(); }
 		
+		//prueba
+			//StartCounting();
+		
+		
 		//Below is the imported Update methods for global muting.
 		int _value = PlayerPrefs.GetInt("_Mute");
 			if(_value == 0){_isMute = false;}
 				if(_value == 1){_isMute = true;}
 					if( _isMute ){ _audioSource.mute = true; } else { _audioSource.mute = false; }
 	}
+	
+	
+	
 	
 	public void StartPlayer(){
 		if(!_loopTrack) { //If the Audio Source is not set to loop the clip we will play the next clip.
@@ -75,6 +82,7 @@ public class Music_Player : MonoBehaviour {
 				} 
 				_audioSource.Play();
 				Debug.Log("Called NextTrack: _next="+_newCount+" : _playing="+_playingTrack +" : _name= "+_audioTracks[_playingTrack].name);
+				
 		
 	}
 	

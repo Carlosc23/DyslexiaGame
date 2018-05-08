@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class Menu_Controller : MonoBehaviour {
 
 	[Tooltip("_sceneToLoadOnPlay is the name of the scene that will be loaded when users click play")]
+	
+	public int TimeLeft=15;
+	public int Dificultad;
 	public string _sceneToLoadOnPlay = "Mode";
     public string _sceneToLoadOnPlay2 = "Record";
     public string _sceneToLoadOnPlay3 = "Level";
@@ -14,6 +17,12 @@ public class Menu_Controller : MonoBehaviour {
     "M1 Facil L 5","M1 Facil L 6","M1 Facil L 7","M1 Facil L 8","M1 Facil L 9","M1 Facil L 10","M1 Facil L 11","M1 Facil L 12",
     "M1 Facil L 13","M1 Facil L 14","M1 Facil L 15","M1 Facil L 16","M1 Facil L 17","M1 Facil L 18","M1 Facil L 19",
     "M1 Facil L 20","M1 Facil L 21","M1 Facil L 22","M1 Facil L 23","M1 Facil L 24","M1 Facil L 25"};
+	
+	 public string[] difwords = new string[] { "M1 Facil L 26", "M1 Facil L 27", "M1 Facil L 28", "M1 Facil L 29", "M1 Facil L 30",
+    "M1 Facil L 31","M1 Facil L 32","M1 Facil L 33","M1 Facil L 34","M1 Facil L 35","M1 Facil L 36","M1 Facil L 37","M1 Facil L 38",
+    "M1 Facil L 39","M1 Facil L 40","M1 Facil L 41","M1 Facil L 42","M1 Facil L 43","M1 Facil L 44","M1 Facil L 45",
+    "M1 Facil L 46","M1 Facil L 47","M1 Facil L 48","M1 Facil L 49","M1 Facil L 50","M1 Facil L 51"};
+	
     public static int cont = 0;
     public static Random rnd = new Random();
     [Tooltip("_webpageURL defines the URL that will be opened when users click on your branding icon")]
@@ -25,19 +34,51 @@ public class Menu_Controller : MonoBehaviour {
 	[Tooltip("_audioSource defines the Audio Source component in this scene.")]
 	public AudioSource _audioSource;
 	
+
+	
 	//The private variable 'scene' defined below is used for example/development purposes.
 	//It is used in correlation with the Escape_Menu script to return to last scene on key press.
 	UnityEngine.SceneManagement.Scene scene;
 
 	void Awake () {
+		
 		if(!PlayerPrefs.HasKey("_Mute")){
+			print("Hola");
+			print(PlayerPrefs.GetInt("_Mute"));
 			PlayerPrefs.SetInt("_Mute", 0);
 		}
 		
+		if (!PlayerPrefs.HasKey("_DIF")){
+			PlayerPrefs.SetInt("_DIF",0);
+
+		}
+		
+		print ("jorge");
+		print("Dificultad: " + PlayerPrefs.GetInt("_DIF"));
+		StartCounting();
 		scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
 		PlayerPrefs.SetString("_LastScene", scene.name.ToString()); 
 		//Debug.Log(scene.name);
 	}
+	
+	public void StartCounting(){
+		InvokeRepeating("Count",0,1);
+		
+	}
+	
+	public void Count(){
+	//TEngo que poner esto dentro del de las dificiles
+		if (PlayerPrefs.GetInt("_DIF")==1){
+			if(TimeLeft>0){
+				TimeLeft--;
+				print (TimeLeft);
+			}
+			else{
+				print ("lost");
+			}
+		}
+	}
+	
 	
 	public void OpenWebpage () {
 		_audioSource.PlayOneShot(_audioClip);
@@ -45,12 +86,16 @@ public class Menu_Controller : MonoBehaviour {
 	}
 	
 	public void PlayGame () {
+					PlayerPrefs.SetInt("_DIF",0);
+
 		_audioSource.PlayOneShot(_audioClip);
 		PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
 		UnityEngine.SceneManagement.SceneManager.LoadScene("Mode");
 	}
 	public void EnterRecords(){
+					PlayerPrefs.SetInt("_DIF",0);
+
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
@@ -71,7 +116,15 @@ public class Menu_Controller : MonoBehaviour {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level 2");
     }
 	
+	//prueba con update
+	
+	
+	
 	public void EnterInventadasFacil1(){
+		Dificultad=1;
+		PlayerPrefs.SetInt("_DIF",1);
+		//print ("dificultad"+Dificultad);
+		//StartCounting();
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
@@ -81,6 +134,28 @@ public class Menu_Controller : MonoBehaviour {
         if (cont <= 5)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(words[r]);
+			//StartCounting();
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
+        }
+       
+    }
+	
+	public void EnterInventadasDificil1(){
+		Dificultad=1;
+		//StartCounting();
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+		print ("Dificil");
+        Debug.Log("Estoy aqui");
+        int r = Random.Range(0, 24);
+        cont++;
+        if (cont <= 10)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(difwords[r]);
         }
         else
         {
@@ -92,12 +167,16 @@ public class Menu_Controller : MonoBehaviour {
 	
 	
 	public void BackToMain(){
+					PlayerPrefs.SetInt("_DIF",0);
+
         cont = 0;
         _audioSource.PlayOneShot(_audioClip);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Standalone");
     }
 	
 	public void BackToMode(){
+					PlayerPrefs.SetInt("_DIF",0);
+
         _audioSource.PlayOneShot(_audioClip);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Mode");
     }
