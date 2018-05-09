@@ -145,6 +145,8 @@ public class Menu_Controller : MonoBehaviour {
 	
 	public void EnterInventadasDificil1(){
 		Dificultad=2;
+		PlayerPrefs.SetInt("_DIF",2);
+
 		//StartCounting();
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
@@ -155,7 +157,7 @@ public class Menu_Controller : MonoBehaviour {
         cont++;
         if (cont <= 10)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(difwords[r]);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(words[r]);
         }
         else
         {
