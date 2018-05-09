@@ -567,6 +567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8743df17e8a2d44cbcf9d605deee399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeLeft: 15
+  Dificultad: 0
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
@@ -598,6 +600,33 @@ MonoBehaviour:
   - M1 Facil L 23
   - M1 Facil L 24
   - M1 Facil L 25
+  difwords:
+  - M1 Facil L 26
+  - M1 Facil L 27
+  - M1 Facil L 28
+  - M1 Facil L 29
+  - M1 Facil L 30
+  - M1 Facil L 31
+  - M1 Facil L 32
+  - M1 Facil L 33
+  - M1 Facil L 34
+  - M1 Facil L 35
+  - M1 Facil L 36
+  - M1 Facil L 37
+  - M1 Facil L 38
+  - M1 Facil L 39
+  - M1 Facil L 40
+  - M1 Facil L 41
+  - M1 Facil L 42
+  - M1 Facil L 43
+  - M1 Facil L 44
+  - M1 Facil L 45
+  - M1 Facil L 46
+  - M1 Facil L 47
+  - M1 Facil L 48
+  - M1 Facil L 49
+  - M1 Facil L 50
+  - M1 Facil L 51
   _webpageURL: http://www.alpaca.studio
   _soundButtons: []
   _audioClip: {fileID: 0}
@@ -1170,6 +1199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8743df17e8a2d44cbcf9d605deee399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeLeft: 15
+  Dificultad: 0
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
@@ -1201,6 +1232,33 @@ MonoBehaviour:
   - M1 Facil L 23
   - M1 Facil L 24
   - M1 Facil L 25
+  difwords:
+  - M1 Facil L 26
+  - M1 Facil L 27
+  - M1 Facil L 28
+  - M1 Facil L 29
+  - M1 Facil L 30
+  - M1 Facil L 31
+  - M1 Facil L 32
+  - M1 Facil L 33
+  - M1 Facil L 34
+  - M1 Facil L 35
+  - M1 Facil L 36
+  - M1 Facil L 37
+  - M1 Facil L 38
+  - M1 Facil L 39
+  - M1 Facil L 40
+  - M1 Facil L 41
+  - M1 Facil L 42
+  - M1 Facil L 43
+  - M1 Facil L 44
+  - M1 Facil L 45
+  - M1 Facil L 46
+  - M1 Facil L 47
+  - M1 Facil L 48
+  - M1 Facil L 49
+  - M1 Facil L 50
+  - M1 Facil L 51
   _webpageURL: http://www.alpaca.studio
   _soundButtons: []
   _audioClip: {fileID: 0}
@@ -1251,6 +1309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8743df17e8a2d44cbcf9d605deee399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeLeft: 15
+  Dificultad: 0
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
@@ -1282,6 +1342,33 @@ MonoBehaviour:
   - M1 Facil L 23
   - M1 Facil L 24
   - M1 Facil L 25
+  difwords:
+  - M1 Facil L 26
+  - M1 Facil L 27
+  - M1 Facil L 28
+  - M1 Facil L 29
+  - M1 Facil L 30
+  - M1 Facil L 31
+  - M1 Facil L 32
+  - M1 Facil L 33
+  - M1 Facil L 34
+  - M1 Facil L 35
+  - M1 Facil L 36
+  - M1 Facil L 37
+  - M1 Facil L 38
+  - M1 Facil L 39
+  - M1 Facil L 40
+  - M1 Facil L 41
+  - M1 Facil L 42
+  - M1 Facil L 43
+  - M1 Facil L 44
+  - M1 Facil L 45
+  - M1 Facil L 46
+  - M1 Facil L 47
+  - M1 Facil L 48
+  - M1 Facil L 49
+  - M1 Facil L 50
+  - M1 Facil L 51
   _webpageURL: http://www.alpaca.studio
   _soundButtons: []
   _audioClip: {fileID: 0}
@@ -1519,8 +1606,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1921666954}
-        m_MethodName: 
+      - m_Target: {fileID: 1921666956}
+        m_MethodName: EnterInventadasDificil1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1659,6 +1746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8743df17e8a2d44cbcf9d605deee399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeLeft: 15
+  Dificultad: 0
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
@@ -1690,6 +1779,33 @@ MonoBehaviour:
   - M1 Facil L 23
   - M1 Facil L 24
   - M1 Facil L 25
+  difwords:
+  - M1 Facil L 26
+  - M1 Facil L 27
+  - M1 Facil L 28
+  - M1 Facil L 29
+  - M1 Facil L 30
+  - M1 Facil L 31
+  - M1 Facil L 32
+  - M1 Facil L 33
+  - M1 Facil L 34
+  - M1 Facil L 35
+  - M1 Facil L 36
+  - M1 Facil L 37
+  - M1 Facil L 38
+  - M1 Facil L 39
+  - M1 Facil L 40
+  - M1 Facil L 41
+  - M1 Facil L 42
+  - M1 Facil L 43
+  - M1 Facil L 44
+  - M1 Facil L 45
+  - M1 Facil L 46
+  - M1 Facil L 47
+  - M1 Facil L 48
+  - M1 Facil L 49
+  - M1 Facil L 50
+  - M1 Facil L 51
   _webpageURL: http://www.alpaca.studio
   _soundButtons: []
   _audioClip: {fileID: 0}
