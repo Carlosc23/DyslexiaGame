@@ -10,6 +10,7 @@ public class Menu_Controller : MonoBehaviour {
 	public int TimeLeft=5;
     public static int puntosActuales = 0;
 	public int Dificultad;
+    public Text recordText;
 	public string _sceneToLoadOnPlay = "Mode";
     public string _sceneToLoadOnPlay2 = "Record";
     public string _sceneToLoadOnPlay3 = "Level";
@@ -59,10 +60,13 @@ public class Menu_Controller : MonoBehaviour {
 		print ("jorge");
 		print("Dificultad: " + PlayerPrefs.GetInt("_DIF"));
 		StartCounting();
+       
+       // recordText.text = "";
 		scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-		PlayerPrefs.SetString("_LastScene", scene.name.ToString()); 
-		//Debug.Log(scene.name);
-	}
+		PlayerPrefs.SetString("_LastScene", scene.name.ToString());
+        recordText = GetComponent<Text>();
+        //Debug.Log(scene.name);
+    }
 	
 	public void StartCounting(){
 		InvokeRepeating("Count",0,1);
@@ -91,13 +95,13 @@ public class Menu_Controller : MonoBehaviour {
 	}
 	
 	public void PlayGame () {
-					PlayerPrefs.SetInt("_DIF",0);
-
+		PlayerPrefs.SetInt("_DIF",0);
 		_audioSource.PlayOneShot(_audioClip);
 		PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
 		UnityEngine.SceneManagement.SceneManager.LoadScene("Mode");
-	}
+        //recordText.text = "";
+    }
 	public void EnterRecords(){
 					PlayerPrefs.SetInt("_DIF",0);
 
@@ -150,22 +154,24 @@ public class Menu_Controller : MonoBehaviour {
 		if (PlayerPrefs.GetInt("_DIF")==1){
 			
 			 if (cont <= 5){
-               // if (cont < 5){
                     puntosActuales += 5;
                     Debug.Log("Puntos");
                     Debug.Log(puntosActuales);
                     print(puntosActuales);
-                //}
                
                 UnityEngine.SceneManagement.SceneManager.LoadScene(words[r]);
 			//StartCounting();
         }
         else{
                 
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
+                recordText = GetComponent<Text>();
+                Debug.Log("Usted ha obtenido: " + puntosActuales.ToString() + " puntos");
+                recordText.text = "";
+                recordText.GetComponent<UnityEngine.UI.Text>().text = "Usted ha obtenido: " + puntosActuales.ToString() + " puntos";
+            }
+
         }
-			
-		}
 		
 		if (PlayerPrefs.GetInt("_DIF")==2){
 			 if (cont <= 10){

@@ -251,6 +251,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 232162980}
+--- !u!1 &335613906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 335613907}
+  - component: {fileID: 335613909}
+  - component: {fileID: 335613908}
+  m_Layer: 5
+  m_Name: recordText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &335613907
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335613906}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.01667, y: 0.01667, z: 0.01667}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 69.54761, y: 3401.6978}
+  m_SizeDelta: {x: 855, y: 208.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &335613908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335613906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.14509805, g: 0.14509805, b: 0.14509805, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 6fd9f74f13d3d5b42b08bbb1be66f936, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 300
+    m_Alignment: 7
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &335613909
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335613906}
 --- !u!1 &429879331
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +355,7 @@ RectTransform:
   m_Children:
   - {fileID: 232162981}
   m_Father: {fileID: 746802233}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -655,15 +729,14 @@ RectTransform:
   m_LocalScale: {x: 0.016666666, y: 0.016666666, z: 0.016666666}
   m_Children:
   - {fileID: 2070267602}
-  - {fileID: 1900340468}
   - {fileID: 1516730757}
   - {fileID: 843568159}
   - {fileID: 1921666955}
   - {fileID: 948528222}
   - {fileID: 1488543706}
   - {fileID: 429879332}
-  - {fileID: 1175938451}
   - {fileID: 2029163693}
+  - {fileID: 1900340468}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -702,7 +775,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 746802233}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -822,6 +895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8743df17e8a2d44cbcf9d605deee399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeLeft: 5
+  Dificultad: 0
+  recordText: {fileID: 335613908}
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
@@ -853,6 +929,33 @@ MonoBehaviour:
   - M1 Facil L 23
   - M1 Facil L 24
   - M1 Facil L 25
+  difwords:
+  - M1 Facil L 26
+  - M1 Facil L 27
+  - M1 Facil L 28
+  - M1 Facil L 29
+  - M1 Facil L 30
+  - M1 Facil L 31
+  - M1 Facil L 32
+  - M1 Facil L 33
+  - M1 Facil L 34
+  - M1 Facil L 35
+  - M1 Facil L 36
+  - M1 Facil L 37
+  - M1 Facil L 38
+  - M1 Facil L 39
+  - M1 Facil L 40
+  - M1 Facil L 41
+  - M1 Facil L 42
+  - M1 Facil L 43
+  - M1 Facil L 44
+  - M1 Facil L 45
+  - M1 Facil L 46
+  - M1 Facil L 47
+  - M1 Facil L 48
+  - M1 Facil L 49
+  - M1 Facil L 50
+  - M1 Facil L 51
   _webpageURL: http://www.alpaca.studio
   _soundButtons: []
   _audioClip: {fileID: 0}
@@ -883,87 +986,13 @@ RectTransform:
   m_LocalScale: {x: 1.0002, y: 1.0002, z: 1.0002}
   m_Children: []
   m_Father: {fileID: 746802233}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -315, y: -124.9997}
   m_SizeDelta: {x: 399, y: 346}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1175938450
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1175938451}
-  - component: {fileID: 1175938453}
-  - component: {fileID: 1175938452}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1175938451
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1175938450}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 746802233}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 61, y: -30.55}
-  m_SizeDelta: {x: 588.7, y: 157.1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1175938452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1175938450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 6fd9f74f13d3d5b42b08bbb1be66f936, type: 3}
-    m_FontSize: 74
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 76
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: '... Puntos '
---- !u!222 &1175938453
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1175938450}
 --- !u!1 &1298235210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,7 +1109,7 @@ RectTransform:
   m_LocalScale: {x: 1.0002, y: 1.0002, z: 1.0002}
   m_Children: []
   m_Father: {fileID: 746802233}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1098,6 +1127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8743df17e8a2d44cbcf9d605deee399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeLeft: 5
+  Dificultad: 0
+  recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
@@ -1129,6 +1161,33 @@ MonoBehaviour:
   - M1 Facil L 23
   - M1 Facil L 24
   - M1 Facil L 25
+  difwords:
+  - M1 Facil L 26
+  - M1 Facil L 27
+  - M1 Facil L 28
+  - M1 Facil L 29
+  - M1 Facil L 30
+  - M1 Facil L 31
+  - M1 Facil L 32
+  - M1 Facil L 33
+  - M1 Facil L 34
+  - M1 Facil L 35
+  - M1 Facil L 36
+  - M1 Facil L 37
+  - M1 Facil L 38
+  - M1 Facil L 39
+  - M1 Facil L 40
+  - M1 Facil L 41
+  - M1 Facil L 42
+  - M1 Facil L 43
+  - M1 Facil L 44
+  - M1 Facil L 45
+  - M1 Facil L 46
+  - M1 Facil L 47
+  - M1 Facil L 48
+  - M1 Facil L 49
+  - M1 Facil L 50
+  - M1 Facil L 51
   _webpageURL: http://www.alpaca.studio
   _soundButtons: []
   _audioClip: {fileID: 0}
@@ -1170,7 +1229,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4481103903409266, guid: 6ec64b4c4066fda49891d51887ba93b3, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ec64b4c4066fda49891d51887ba93b3, type: 2}
@@ -1271,17 +1330,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1900340467}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 746802233}
-  m_RootOrder: 1
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 27.129883}
-  m_SizeDelta: {x: -459, y: 1.7799695}
+  m_AnchoredPosition: {x: 7.6999993, y: 1.1000366}
+  m_SizeDelta: {x: -335.30002, y: -448.70004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1900340469
 MonoBehaviour:
@@ -1295,7 +1354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8235294, g: 0.30882353, b: 0.30882353, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1360,7 +1419,7 @@ RectTransform:
   m_Children:
   - {fileID: 734823019}
   m_Father: {fileID: 746802233}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1378,6 +1437,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8743df17e8a2d44cbcf9d605deee399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeLeft: 5
+  Dificultad: 0
+  recordText: {fileID: 1900340469}
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
@@ -1409,6 +1471,33 @@ MonoBehaviour:
   - M1 Facil L 23
   - M1 Facil L 24
   - M1 Facil L 25
+  difwords:
+  - M1 Facil L 26
+  - M1 Facil L 27
+  - M1 Facil L 28
+  - M1 Facil L 29
+  - M1 Facil L 30
+  - M1 Facil L 31
+  - M1 Facil L 32
+  - M1 Facil L 33
+  - M1 Facil L 34
+  - M1 Facil L 35
+  - M1 Facil L 36
+  - M1 Facil L 37
+  - M1 Facil L 38
+  - M1 Facil L 39
+  - M1 Facil L 40
+  - M1 Facil L 41
+  - M1 Facil L 42
+  - M1 Facil L 43
+  - M1 Facil L 44
+  - M1 Facil L 45
+  - M1 Facil L 46
+  - M1 Facil L 47
+  - M1 Facil L 48
+  - M1 Facil L 49
+  - M1 Facil L 50
+  - M1 Facil L 51
   _webpageURL: http://www.alpaca.studio
   _soundButtons: []
   _audioClip: {fileID: 0}
@@ -1443,7 +1532,7 @@ RectTransform:
   m_Children:
   - {fileID: 1560130034}
   m_Father: {fileID: 746802233}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
