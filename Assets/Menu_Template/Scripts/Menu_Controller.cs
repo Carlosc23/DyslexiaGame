@@ -54,6 +54,8 @@ public class Menu_Controller : MonoBehaviour {
 
 		}
 		
+		
+		
 		print ("jorge");
 		print("Dificultad: " + PlayerPrefs.GetInt("_DIF"));
 		StartCounting();
@@ -124,8 +126,17 @@ public class Menu_Controller : MonoBehaviour {
 	
 	
 	public void EnterInventadasFacil1(){
-		Dificultad=1;
-		PlayerPrefs.SetInt("_DIF",1);
+		//Dificultad=1;
+		
+			if (PlayerPrefs.GetInt("_DIF") ==2){
+				PlayerPrefs.SetInt("_DIF",2);
+			}else{
+				
+				PlayerPrefs.SetInt("_DIF",1);
+			}
+		
+		
+		
 		//print ("dificultad"+Dificultad);
 		//StartCounting();
         _audioSource.PlayOneShot(_audioClip);
