@@ -8,6 +8,7 @@ public class Menu_Controller : MonoBehaviour {
 	[Tooltip("_sceneToLoadOnPlay is the name of the scene that will be loaded when users click play")]
 	
 	public int TimeLeft=5;
+    public static int puntosActuales = 0;
 	public int Dificultad;
 	public string _sceneToLoadOnPlay = "Mode";
     public string _sceneToLoadOnPlay2 = "Record";
@@ -131,31 +132,36 @@ public class Menu_Controller : MonoBehaviour {
         PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         Debug.Log("Estoy aqui");
+        Debug.Log("InventadasFacil1");
         int r = Random.Range(0, 24);
         cont++;
 	
 		if (PlayerPrefs.GetInt("_DIF")==1){
 			
-			 if (cont <= 5)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(words[r]);
+			 if (cont <= 5){
+               // if (cont < 5){
+                    puntosActuales += 5;
+                    Debug.Log("Puntos");
+                    Debug.Log(puntosActuales);
+                    print(puntosActuales);
+                //}
+               
+                UnityEngine.SceneManagement.SceneManager.LoadScene(words[r]);
 			//StartCounting();
         }
-        else
-        {
+        else{
+                
             UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
         }
 			
 		}
 		
 		if (PlayerPrefs.GetInt("_DIF")==2){
-			 if (cont <= 10)
-        {
+			 if (cont <= 10){
             UnityEngine.SceneManagement.SceneManager.LoadScene(words[r]);
 			//StartCounting();
         }
-        else
-        {
+        else{
             UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
         }
 			
