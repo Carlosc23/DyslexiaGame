@@ -58,6 +58,10 @@ public class Menu_Controller : MonoBehaviour {
 			PlayerPrefs.SetInt("_LEV",0);
 
 		}
+        if (!PlayerPrefs.HasKey("_SCORE"))
+        {
+            PlayerPrefs.SetInt("_SCORE", 0);
+        }
 		
 		
 		print ("jorge");
@@ -124,15 +128,16 @@ public class Menu_Controller : MonoBehaviour {
     public void EnterLevelm1(){
         _audioSource.PlayOneShot(_audioClip);
 		PlayerPrefs.SetInt("_LEV",1);
+        PlayerPrefs.SetInt("_SCORE", 0);
         PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay3);
     }
-	
-	public void EnterLevelm2(){
-        _audioSource.PlayOneShot(_audioClip);
-				PlayerPrefs.SetInt("_LEV",2);
 
+    public void EnterLevelm2() {
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetInt("_LEV",2);
+        PlayerPrefs.SetInt("_SCORE", 0);
         PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level 2");
@@ -163,6 +168,7 @@ public class Menu_Controller : MonoBehaviour {
 			
 			 if (cont <= 5){
                     puntosActuales += 5;
+                    PlayerPrefs.SetInt("_SCORE", puntosActuales);
                     Debug.Log("Puntos");
                     Debug.Log(puntosActuales);
                     print(puntosActuales);
@@ -181,7 +187,9 @@ public class Menu_Controller : MonoBehaviour {
 		
 		if (PlayerPrefs.GetInt("_DIF")==2){
 			 if (cont <= 10){
-            UnityEngine.SceneManagement.SceneManager.LoadScene(words[r]);
+                puntosActuales += 5;
+                PlayerPrefs.SetInt("_SCORE", puntosActuales);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(words[r]);
 			//StartCounting();
         }
         else{
@@ -209,6 +217,8 @@ public class Menu_Controller : MonoBehaviour {
         cont++;
         if (cont <= 10)
         {
+            puntosActuales += 5;
+            PlayerPrefs.SetInt("_SCORE", puntosActuales);
             UnityEngine.SceneManagement.SceneManager.LoadScene(words[r]);
         }
         else
@@ -244,7 +254,8 @@ public class Menu_Controller : MonoBehaviour {
 			
 			 if (cont <= 5){
                     puntosActuales += 5;
-                    Debug.Log("Puntos");
+                PlayerPrefs.SetInt("_SCORE", puntosActuales);
+                Debug.Log("Puntos");
                     Debug.Log(puntosActuales);
                     print(puntosActuales);
                
@@ -262,7 +273,9 @@ public class Menu_Controller : MonoBehaviour {
 		
 		if (PlayerPrefs.GetInt("_DIF")==2){
 			 if (cont <= 10){
-            UnityEngine.SceneManagement.SceneManager.LoadScene(difwords[r]);
+                puntosActuales += 5;
+                PlayerPrefs.SetInt("_SCORE", puntosActuales);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(difwords[r]);
 			//StartCounting();
         }
         else{
@@ -290,6 +303,8 @@ public class Menu_Controller : MonoBehaviour {
         cont++;
         if (cont <= 10)
         {
+            puntosActuales += 5;
+            PlayerPrefs.SetInt("_SCORE", puntosActuales);
             UnityEngine.SceneManagement.SceneManager.LoadScene(difwords[r]);
         }
         else
@@ -304,8 +319,10 @@ public class Menu_Controller : MonoBehaviour {
 	
 	public void BackToMain(){
 					PlayerPrefs.SetInt("_DIF",0);
-
+        PlayerPrefs.SetInt("_SCORE", 0);
+        Debug.Log("El punteo es :" + PlayerPrefs.GetInt("_SCORE"));
         cont = 0;
+        puntosActuales = 0;
         _audioSource.PlayOneShot(_audioClip);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Standalone");
     }

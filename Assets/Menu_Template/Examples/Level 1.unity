@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 335613907}
   - component: {fileID: 335613909}
   - component: {fileID: 335613908}
+  - component: {fileID: 335613910}
   m_Layer: 5
   m_Name: recordText
   m_TagString: Untagged
@@ -275,16 +276,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 335613906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.01667, y: 0.01667, z: 0.01667}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0002, y: 1.0002, z: 1.0002}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 746802233}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 69.54761, y: 3401.6978}
-  m_SizeDelta: {x: 855, y: 208.1}
+  m_AnchoredPosition: {x: 14, y: -279}
+  m_SizeDelta: {x: 707.6, y: 161.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &335613908
 MonoBehaviour:
@@ -298,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.14509805, g: 0.14509805, b: 0.14509805, a: 1}
+  m_Color: {r: 0.99264705, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -307,10 +308,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6fd9f74f13d3d5b42b08bbb1be66f936, type: 3}
-    m_FontSize: 14
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 300
     m_Alignment: 7
     m_AlignByGeometry: 1
@@ -318,13 +319,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Puntos obtenidos: '
 --- !u!222 &335613909
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 335613906}
+--- !u!114 &335613910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335613906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c9f7b8a1017ae47925680a7be08353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &429879331
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +749,7 @@ RectTransform:
   - {fileID: 429879332}
   - {fileID: 2029163693}
   - {fileID: 1900340468}
+  - {fileID: 335613907}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
