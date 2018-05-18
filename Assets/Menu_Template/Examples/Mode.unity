@@ -854,6 +854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeLeft: 15
   Dificultad: 0
+  recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
@@ -1162,6 +1163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeLeft: 15
   Dificultad: 0
+  recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
@@ -1361,6 +1363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeLeft: 15
   Dificultad: 0
+  recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level
@@ -1781,7 +1784,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Sustituci\xF3n\nde letras"
+  m_Text: 'Seleccion de
+
+    silabas'
 --- !u!222 &1739334394
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1836,6 +1841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeLeft: 15
   Dificultad: 0
+  recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
   _sceneToLoadOnPlay2: Record
   _sceneToLoadOnPlay3: Level

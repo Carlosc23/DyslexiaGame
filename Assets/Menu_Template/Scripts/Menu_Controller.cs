@@ -22,8 +22,7 @@ public class Menu_Controller : MonoBehaviour {
 	
 	 public string[] difwords = new string[] { "M1 Facil L 26", "M1 Facil L 27", "M1 Facil L 28", "M1 Facil L 29", "M1 Facil L 30",
     "M1 Facil L 31","M1 Facil L 32","M1 Facil L 33","M1 Facil L 34","M1 Facil L 35","M1 Facil L 36","M1 Facil L 37","M1 Facil L 38",
-    "M1 Facil L 39","M1 Facil L 40","M1 Facil L 41","M1 Facil L 42","M1 Facil L 43","M1 Facil L 44","M1 Facil L 45",
-    "M1 Facil L 46","M1 Facil L 47","M1 Facil L 48","M1 Facil L 49","M1 Facil L 50","M1 Facil L 51"};
+    "M1 Facil L 39","M1 Facil L 40","M1 Facil L 41","M1 Facil L 42","M1 Facil L 43","M1 Facil L 44","M1 Facil L 45"};
 	
     public static int cont = 0;
     public static Random rnd = new Random();
@@ -55,6 +54,10 @@ public class Menu_Controller : MonoBehaviour {
 
 		}
 		
+		if (!PlayerPrefs.HasKey("_LEV")){
+			PlayerPrefs.SetInt("_LEV",0);
+
+		}
 		
 		
 		print ("jorge");
@@ -82,7 +85,15 @@ public class Menu_Controller : MonoBehaviour {
 			}
 			else{
 				print ("lost");
-				EnterInventadasDificil1();
+				
+				if (PlayerPrefs.GetInt("_LEV")==1){
+				EnterInventadasDificil1();	
+					
+				}else if (PlayerPrefs.GetInt("_LEV")==2){
+					EnterSilabasDificil2();
+				}
+				
+				
 
 			}
 		}
@@ -112,7 +123,7 @@ public class Menu_Controller : MonoBehaviour {
     }
     public void EnterLevelm1(){
         _audioSource.PlayOneShot(_audioClip);
-		
+		PlayerPrefs.SetInt("_LEV",1);
         PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay3);
@@ -120,6 +131,8 @@ public class Menu_Controller : MonoBehaviour {
 	
 	public void EnterLevelm2(){
         _audioSource.PlayOneShot(_audioClip);
+				PlayerPrefs.SetInt("_LEV",2);
+
         PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level 2");
@@ -127,20 +140,16 @@ public class Menu_Controller : MonoBehaviour {
 	
 	//prueba con update
 	
-	
+	//PARA LOS NIVELES DEL MODO 1
 	
 	public void EnterInventadasFacil1(){
 		//Dificultad=1;
-		
 			if (PlayerPrefs.GetInt("_DIF") ==2){
 				PlayerPrefs.SetInt("_DIF",2);
 			}else{
 				
 				PlayerPrefs.SetInt("_DIF",1);
 			}
-		
-		
-		
 		//print ("dificultad"+Dificultad);
 		//StartCounting();
         _audioSource.PlayOneShot(_audioClip);
@@ -150,7 +159,6 @@ public class Menu_Controller : MonoBehaviour {
         Debug.Log("InventadasFacil1");
         int r = Random.Range(0, 24);
         cont++;
-	
 		if (PlayerPrefs.GetInt("_DIF")==1){
 			
 			 if (cont <= 5){
@@ -163,14 +171,12 @@ public class Menu_Controller : MonoBehaviour {
 			//StartCounting();
         }
         else{
-                
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
                 recordText = GetComponent<Text>();
                 Debug.Log("Usted ha obtenido: " + puntosActuales.ToString() + " puntos");
                 recordText.text = "";
                 recordText.GetComponent<UnityEngine.UI.Text>().text = "Usted ha obtenido: " + puntosActuales.ToString() + " puntos";
             }
-
         }
 		
 		if (PlayerPrefs.GetInt("_DIF")==2){
@@ -212,7 +218,89 @@ public class Menu_Controller : MonoBehaviour {
        
     }
 	
+	//FIN DE PARA LOS NNIVELES DE MODO 1 
 	
+	
+	//PARA LOS NIVELES DE MODO 2
+	
+	public void EnterSilabasFacil2(){
+		//Dificultad=1;
+			if (PlayerPrefs.GetInt("_DIF") ==2){
+				PlayerPrefs.SetInt("_DIF",2);
+			}else{
+				
+				PlayerPrefs.SetInt("_DIF",1);
+			}
+		print ("dificultad"+Dificultad);
+		//StartCounting();
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+        Debug.Log("Estoy aqui");
+        Debug.Log("InventadasFacil1");
+        int r = Random.Range(0, 21);
+        cont++;
+		if (PlayerPrefs.GetInt("_DIF")==1){
+			
+			 if (cont <= 5){
+                    puntosActuales += 5;
+                    Debug.Log("Puntos");
+                    Debug.Log(puntosActuales);
+                    print(puntosActuales);
+               
+                UnityEngine.SceneManagement.SceneManager.LoadScene(difwords[r]);
+			//StartCounting();
+        }
+        else{
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Level 3");
+                recordText = GetComponent<Text>();
+                Debug.Log("Usted ha obtenido: " + puntosActuales.ToString() + " puntos");
+                recordText.text = "";
+                recordText.GetComponent<UnityEngine.UI.Text>().text = "Usted ha obtenido: " + puntosActuales.ToString() + " puntos";
+            }
+        }
+		
+		if (PlayerPrefs.GetInt("_DIF")==2){
+			 if (cont <= 10){
+            UnityEngine.SceneManagement.SceneManager.LoadScene(difwords[r]);
+			//StartCounting();
+        }
+        else{
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Level 3");
+        }
+			
+			
+		}
+		
+       
+       
+    }
+	
+	public void EnterSilabasDificil2(){
+		Dificultad=2;
+		PlayerPrefs.SetInt("_DIF",2);
+
+		//StartCounting();
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+		print ("Dificil");
+        Debug.Log("Estoy aqui");
+        int r = Random.Range(0, 24);
+        cont++;
+        if (cont <= 10)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(difwords[r]);
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Level 3");
+        }
+       
+    }
+	
+	
+	//FIN PARA LOS NIVELES DEL MODO 2
 	
 	public void BackToMain(){
 					PlayerPrefs.SetInt("_DIF",0);
