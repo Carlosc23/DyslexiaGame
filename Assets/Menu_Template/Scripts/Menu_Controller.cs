@@ -62,6 +62,10 @@ public class Menu_Controller : MonoBehaviour {
         {
             PlayerPrefs.SetInt("_SCORE", 0);
         }
+        if (!PlayerPrefs.HasKey("_STATE"))
+        {
+            PlayerPrefs.SetInt("_STATE", 0);
+        }
         for (int  i = 0;i< 5; i++)
         {
             if (!PlayerPrefs.HasKey("_HighScoreM1E"+i.ToString()))
@@ -98,8 +102,47 @@ public class Menu_Controller : MonoBehaviour {
 		InvokeRepeating("Count",0,1);
 		
 	}
-	
-	public void Count(){
+	public void palabraIncorrecta1Facil()
+    {
+        PlayerPrefs.SetInt("_STATE", 2);
+        EnterInventadasFacil1();
+    }
+    public void palabraIncorrecta1Dificil()
+    {
+        PlayerPrefs.SetInt("_STATE", 2);
+        EnterInventadasDificil1();
+    }
+    public void palabraIncorrecta2Facil()
+    {
+        PlayerPrefs.SetInt("_STATE", 2);
+        EnterSilabasFacil2();
+    }
+    public void palabraIncorrecta2Dificil()
+    {
+        PlayerPrefs.SetInt("_STATE", 2);
+        EnterSilabasDificil2();
+    }
+    public void palabraCorrecta1Facil()
+    {
+        PlayerPrefs.SetInt("_STATE", 1);
+        EnterInventadasFacil1();
+    }
+    public void palabraCorrecta1Dificil()
+    {
+        PlayerPrefs.SetInt("_STATE", 1);
+        EnterInventadasDificil1();
+    }
+    public void palabraCorrecta2Facil()
+    {
+        PlayerPrefs.SetInt("_STATE", 1);
+        EnterSilabasFacil2();
+    }
+    public void palabraCorrecta2Dificil()
+    {
+        PlayerPrefs.SetInt("_STATE", 1);
+        EnterSilabasDificil2();
+    }
+    public void Count(){
 	//TEngo que poner esto dentro del de las dificiles
 		if (PlayerPrefs.GetInt("_DIF")==2){
 			if(TimeLeft>0){
@@ -225,7 +268,11 @@ public class Menu_Controller : MonoBehaviour {
         Debug.Log("InventadasFacil1");
         int r = Random.Range(0, 24);
         cont++;
-		if (PlayerPrefs.GetInt("_DIF")==1){
+        if (PlayerPrefs.GetInt("_STATE") == 2)
+        {
+            // Debe hacer algo
+        }
+            if (PlayerPrefs.GetInt("_DIF")==1){
 			
 			 if (cont <= 5){
                     puntosActuales += 5;
@@ -276,6 +323,10 @@ public class Menu_Controller : MonoBehaviour {
         Debug.Log("Estoy aqui");
         int r = Random.Range(0, 24);
         cont++;
+        if (PlayerPrefs.GetInt("_STATE") == 2)
+        {
+            // Debe hacer algo
+        }
         if (cont <= 10)
         {
             puntosActuales += 5;
@@ -311,7 +362,11 @@ public class Menu_Controller : MonoBehaviour {
         Debug.Log("InventadasFacil1");
         int r = Random.Range(0, 21);
         cont++;
-		if (PlayerPrefs.GetInt("_DIF")==1){
+        if (PlayerPrefs.GetInt("_STATE") == 2)
+        {
+            // Debe hacer algo
+        }
+        if (PlayerPrefs.GetInt("_DIF")==1){
 			
 			 if (cont <= 5){
                     puntosActuales += 5;
@@ -362,6 +417,10 @@ public class Menu_Controller : MonoBehaviour {
         Debug.Log("Estoy aqui");
         int r = Random.Range(0, 24);
         cont++;
+        if (PlayerPrefs.GetInt("_STATE") == 2)
+        {
+            // Debe hacer algo
+        }
         if (cont <= 10)
         {
             puntosActuales += 5;
