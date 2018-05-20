@@ -105,18 +105,42 @@ public class Menu_Controller : MonoBehaviour {
 	public void palabraIncorrecta1Facil()
     {
         PlayerPrefs.SetInt("_STATE", 2);
-        EnterInventadasFacil1();
+		Debug.Log("el estado es incorrecto ..............: " +PlayerPrefs.GetInt("_STATE").ToString());
+		//yield return new WaitForSeconds(10);
+		Invoke("tiempoincorrecta1",2);
+		
+        //EnterInventadasFacil1();
     }
+	
+	
+	public void tiempoincorrecta1(){
+		EnterInventadasFacil1();
+		
+	}
+	
+
+	
     public void palabraIncorrecta1Dificil()
     {
         PlayerPrefs.SetInt("_STATE", 2);
         EnterInventadasDificil1();
     }
+	
+	
+	
     public void palabraIncorrecta2Facil()
     {
         PlayerPrefs.SetInt("_STATE", 2);
-        EnterSilabasFacil2();
+		Invoke("tiempoincorrecta2",2);
+        
     }
+	
+	
+	public void tiempoincorrecta2(){
+		
+		EnterSilabasFacil2();
+	}
+	
     public void palabraIncorrecta2Dificil()
     {
         PlayerPrefs.SetInt("_STATE", 2);
@@ -252,6 +276,11 @@ public class Menu_Controller : MonoBehaviour {
 	//PARA LOS NIVELES DEL MODO 1
 	
 	public void EnterInventadasFacil1(){
+		
+		//siempre reiniciamos el estado al iniciar en una ueva pantalla
+		            PlayerPrefs.SetInt("_STATE", 0);
+Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
+		
 		//Dificultad=1;
 			if (PlayerPrefs.GetInt("_DIF") ==2){
 				PlayerPrefs.SetInt("_DIF",2);
@@ -346,6 +375,11 @@ public class Menu_Controller : MonoBehaviour {
 	//PARA LOS NIVELES DE MODO 2
 	
 	public void EnterSilabasFacil2(){
+		
+		//siempre reiniciamos el estado al inciiar el nivel 
+		        PlayerPrefs.SetInt("_STATE", 0);
+				Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
+		
 		//Dificultad=1;
 			if (PlayerPrefs.GetInt("_DIF") ==2){
 				PlayerPrefs.SetInt("_DIF",2);
