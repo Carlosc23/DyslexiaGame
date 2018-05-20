@@ -582,7 +582,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "S\xEDlabas\nNormal"
+  m_Text: "S\xEDlabas\nDif\xEDcil"
 --- !u!222 &654528999
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1482,7 +1482,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1927587228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5250dd411d1617243bc474950db6a8da, type: 3}
+  m_Script: {fileID: 11500000, guid: d1ea93c3cfc161d47986cc532226abac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2070267601

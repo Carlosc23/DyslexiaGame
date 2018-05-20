@@ -157,14 +157,42 @@ public class Menu_Controller : MonoBehaviour {
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
         Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("RecordMode1");
+    }
+    public void EnterRecordm1E()
+    {
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Record 1");
+    }
+    public void EnterRecordm1H()
+    {
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Record 3");
     }
     public void EnterRecordm2()
     {
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
         Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("RecordMode2");
+    }
+    public void EnterRecordm2E()
+    {
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Record 2");
+    }
+    public void EnterRecordm2H()
+    {
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Record 4");
     }
 
     public void EnterLevelm2() {
@@ -352,10 +380,12 @@ public class Menu_Controller : MonoBehaviour {
 	
 	public void BackToMain(){
 
+        if (PlayerPrefs.GetInt("_DIF") == 1)
+        {
             for (int i = 0; i < 5; i++)
             {
 
-                int  highScore = PlayerPrefs.GetInt("_HighScoreM1E"+i.ToString());
+                int highScore = PlayerPrefs.GetInt("_HighScoreM1E" + i.ToString());
 
                 if (puntosActuales > highScore)
                 {
@@ -364,6 +394,23 @@ public class Menu_Controller : MonoBehaviour {
                     puntosActuales = temp;
                 }
             }
+        }
+        else if (PlayerPrefs.GetInt("_DIF") == 2)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+
+                int highScore = PlayerPrefs.GetInt("_HighScoreM1H" + i.ToString());
+
+                if (puntosActuales > highScore)
+                {
+                    int temp = highScore;
+                    PlayerPrefs.SetInt("_HighScoreM1H" + i.ToString(), puntosActuales);
+                    puntosActuales = temp;
+                }
+            }
+        }
+
             PlayerPrefs.SetInt("_DIF",0);
        
         PlayerPrefs.SetInt("_SCORE", 0);
@@ -376,16 +423,34 @@ public class Menu_Controller : MonoBehaviour {
     public void BackToMain2()
     {
 
-        for (int i = 0; i < 5; i++)
+        if (PlayerPrefs.GetInt("_DIF") == 1)
         {
-
-            int highScore = PlayerPrefs.GetInt("_HighScoreM2E" + i.ToString());
-
-            if (puntosActuales > highScore)
+            for (int i = 0; i < 5; i++)
             {
-                int temp = highScore;
-                PlayerPrefs.SetInt("_HighScoreM2E" + i.ToString(), puntosActuales);
-                puntosActuales = temp;
+
+                int highScore = PlayerPrefs.GetInt("_HighScoreM2E" + i.ToString());
+
+                if (puntosActuales > highScore)
+                {
+                    int temp = highScore;
+                    PlayerPrefs.SetInt("_HighScoreM2E" + i.ToString(), puntosActuales);
+                    puntosActuales = temp;
+                }
+            }
+        }
+        else if (PlayerPrefs.GetInt("_DIF") == 2)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+
+                int highScore = PlayerPrefs.GetInt("_HighScoreM2H" + i.ToString());
+
+                if (puntosActuales > highScore)
+                {
+                    int temp = highScore;
+                    PlayerPrefs.SetInt("_HighScoreM2H" + i.ToString(), puntosActuales);
+                    puntosActuales = temp;
+                }
             }
         }
         PlayerPrefs.SetInt("_DIF", 0);
