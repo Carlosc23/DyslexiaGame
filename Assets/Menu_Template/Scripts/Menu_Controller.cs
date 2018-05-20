@@ -62,6 +62,25 @@ public class Menu_Controller : MonoBehaviour {
         {
             PlayerPrefs.SetInt("_SCORE", 0);
         }
+        for (int  i = 0;i< 5; i++)
+        {
+            if (!PlayerPrefs.HasKey("_HighScoreM1E"+i.ToString()))
+            {
+                PlayerPrefs.SetInt("_HighScoreM1E" + i.ToString(), 0);
+            }
+            if (!PlayerPrefs.HasKey("_HighScoreM1H" + i.ToString()))
+            {
+                PlayerPrefs.SetInt("_HighScoreM1H" + i.ToString(), 0);
+            }
+            if (!PlayerPrefs.HasKey("_HighScoreM2E" + i.ToString()))
+            {
+                PlayerPrefs.SetInt("_HighScoreM2E" + i.ToString(), 0);
+            }
+            if (!PlayerPrefs.HasKey("_HighScoreM2H" + i.ToString()))
+            {
+                PlayerPrefs.SetInt("_HighScoreM2H" + i.ToString(), 0);
+            }
+        }
 		
 		
 		print ("jorge");
@@ -132,6 +151,20 @@ public class Menu_Controller : MonoBehaviour {
         PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay3);
+    }
+    public void EnterRecordm1()
+    {
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Record 1");
+    }
+    public void EnterRecordm2()
+    {
+        _audioSource.PlayOneShot(_audioClip);
+        PlayerPrefs.SetString("_LastScene", scene.name);
+        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Record 2");
     }
 
     public void EnterLevelm2() {
@@ -318,7 +351,21 @@ public class Menu_Controller : MonoBehaviour {
 	//FIN PARA LOS NIVELES DEL MODO 2
 	
 	public void BackToMain(){
-					PlayerPrefs.SetInt("_DIF",0);
+
+            for (int i = 0; i < 5; i++)
+            {
+
+                int  highScore = PlayerPrefs.GetInt("_HighScoreM1E"+i.ToString());
+
+                if (puntosActuales > highScore)
+                {
+                    int temp = highScore;
+                    PlayerPrefs.SetInt("_HighScoreM1E" + i.ToString(), puntosActuales);
+                    puntosActuales = temp;
+                }
+            }
+            PlayerPrefs.SetInt("_DIF",0);
+       
         PlayerPrefs.SetInt("_SCORE", 0);
         Debug.Log("El punteo es :" + PlayerPrefs.GetInt("_SCORE"));
         cont = 0;
@@ -326,8 +373,31 @@ public class Menu_Controller : MonoBehaviour {
         _audioSource.PlayOneShot(_audioClip);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Standalone");
     }
-	
-	public void BackToMode(){
+    public void BackToMain2()
+    {
+
+        for (int i = 0; i < 5; i++)
+        {
+
+            int highScore = PlayerPrefs.GetInt("_HighScoreM2E" + i.ToString());
+
+            if (puntosActuales > highScore)
+            {
+                int temp = highScore;
+                PlayerPrefs.SetInt("_HighScoreM2E" + i.ToString(), puntosActuales);
+                puntosActuales = temp;
+            }
+        }
+        PlayerPrefs.SetInt("_DIF", 0);
+
+        PlayerPrefs.SetInt("_SCORE", 0);
+        Debug.Log("El punteo es :" + PlayerPrefs.GetInt("_SCORE"));
+        cont = 0;
+        puntosActuales = 0;
+        _audioSource.PlayOneShot(_audioClip);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Standalone");
+    }
+    public void BackToMode(){
 					PlayerPrefs.SetInt("_DIF",0);
 
         _audioSource.PlayOneShot(_audioClip);
