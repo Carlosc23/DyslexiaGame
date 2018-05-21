@@ -8,6 +8,8 @@ public class Menu_Controller : MonoBehaviour {
 	[Tooltip("_sceneToLoadOnPlay is the name of the scene that will be loaded when users click play")]
 	
 	public int TimeLeft=5;
+	public int tim;
+	public int control=0;
     public static int puntosActuales = 0;
 	public int Dificultad;
     public Text recordText;
@@ -42,7 +44,7 @@ public class Menu_Controller : MonoBehaviour {
 	UnityEngine.SceneManagement.Scene scene;
 
 	void Awake () {
-		
+		tim = TimeLeft;
 		if(!PlayerPrefs.HasKey("_Mute")){
 			print("Hola");
 			print(PlayerPrefs.GetInt("_Mute"));
@@ -66,6 +68,12 @@ public class Menu_Controller : MonoBehaviour {
         {
             PlayerPrefs.SetInt("_STATE", 0);
         }
+		
+		if (!PlayerPrefs.HasKey("_CONT"))
+        {
+            PlayerPrefs.SetInt("_CONT", 0);
+        }
+		
         for (int  i = 0;i< 5; i++)
         {
             if (!PlayerPrefs.HasKey("_HighScoreM1E"+i.ToString()))
@@ -87,9 +95,14 @@ public class Menu_Controller : MonoBehaviour {
         }
 		
 		
-		print ("jorge");
-		print("Dificultad: " + PlayerPrefs.GetInt("_DIF"));
+		//print ("jorge");
+		//print("Dificultad: " + PlayerPrefs.GetInt("_DIF"));
+	
+	
 		StartCounting();
+		
+		
+		
        
        // recordText.text = "";
 		scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
@@ -99,6 +112,8 @@ public class Menu_Controller : MonoBehaviour {
     }
 	
 	public void StartCounting(){
+		
+		
 		InvokeRepeating("Count",0,1);
 		
 	}
@@ -146,11 +161,17 @@ public class Menu_Controller : MonoBehaviour {
         PlayerPrefs.SetInt("_STATE", 2);
         EnterSilabasDificil2();
     }
+	
+	
     public void palabraCorrecta1Facil()
     {
-        PlayerPrefs.SetInt("_STATE", 1);
+        //PlayerPrefs.SetInt("_STATE", 1);
+		cont++;
+		cont++;
         EnterInventadasFacil1();
     }
+	
+	
     public void palabraCorrecta1Dificil()
     {
         PlayerPrefs.SetInt("_STATE", 1);
@@ -158,7 +179,9 @@ public class Menu_Controller : MonoBehaviour {
     }
     public void palabraCorrecta2Facil()
     {
-        PlayerPrefs.SetInt("_STATE", 1);
+        //PlayerPrefs.SetInt("_STATE", 1);
+		cont++;
+		cont++;
         EnterSilabasFacil2();
     }
     public void palabraCorrecta2Dificil()
@@ -171,17 +194,19 @@ public class Menu_Controller : MonoBehaviour {
 		if (PlayerPrefs.GetInt("_DIF")==2){
 			if(TimeLeft>0){
 				TimeLeft--;
-				print (TimeLeft);
+				//print (TimeLeft);
 			}
-			else{
-				print ("lost");
+			else if (TimeLeft==0){
+				print (".,.,.,.,,.,.,.,lost: " + cont.ToString());
                 // puntosActuales -= 5;
                 PlayerPrefs.SetInt("_STATE", 2);
                 if (PlayerPrefs.GetInt("_LEV")==1){
-				EnterInventadasDificil1();	
+				//EnterInventadasDificil1();	
+				EnterInventadasFacil1();
 					
 				}else if (PlayerPrefs.GetInt("_LEV")==2){
-					EnterSilabasDificil2();
+					//EnterSilabasDificil2();
+					EnterSilabasFacil2();
 				}
 				
 				
@@ -200,7 +225,7 @@ public class Menu_Controller : MonoBehaviour {
 		PlayerPrefs.SetInt("_DIF",0);
 		_audioSource.PlayOneShot(_audioClip);
 		PlayerPrefs.SetString("_LastScene", scene.name);
-		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+		//Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
 		UnityEngine.SceneManagement.SceneManager.LoadScene("Mode");
         //recordText.text = "";
     }
@@ -209,7 +234,7 @@ public class Menu_Controller : MonoBehaviour {
 
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
-		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+//		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay2);
     }
     public void EnterLevelm1(){
@@ -217,49 +242,49 @@ public class Menu_Controller : MonoBehaviour {
 		PlayerPrefs.SetInt("_LEV",1);
         PlayerPrefs.SetInt("_SCORE", 0);
         PlayerPrefs.SetString("_LastScene", scene.name);
-		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+		//Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay3);
     }
     public void EnterRecordm1()
     {
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
-        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("RecordMode1");
     }
     public void EnterRecordm1E()
     {
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
-        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Record 1");
     }
     public void EnterRecordm1H()
     {
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
-        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Record 3");
     }
     public void EnterRecordm2()
     {
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
-        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("RecordMode2");
     }
     public void EnterRecordm2E()
     {
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
-        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Record 2");
     }
     public void EnterRecordm2H()
     {
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
-        Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
+        //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Record 4");
     }
 
@@ -268,7 +293,7 @@ public class Menu_Controller : MonoBehaviour {
         PlayerPrefs.SetInt("_LEV",2);
         PlayerPrefs.SetInt("_SCORE", 0);
         PlayerPrefs.SetString("_LastScene", scene.name);
-		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+		//Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level 2");
     }
 	
@@ -279,9 +304,8 @@ public class Menu_Controller : MonoBehaviour {
 	public void EnterInventadasFacil1(){
         if (PlayerPrefs.GetInt("_STATE") == 2)
         {
-
             puntosActuales -= 5;
-            Debug.Log("puntos actuales: " + puntosActuales.ToString());
+            //Debug.Log("puntos actuales: " + puntosActuales.ToString());
             if (cont > 5)
             {
                 puntosActuales -= 5;
@@ -302,15 +326,20 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 		//StartCounting();
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
-		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
-        Debug.Log("Estoy aqui");
-        Debug.Log("InventadasFacil1");
+		//Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+        //Debug.Log("Estoy aqui");
+        //Debug.Log("InventadasFacil1");
         int r = Random.Range(0, 24);
-        cont++;
+        
+		//prueba para el cont comentado aqui 
+		//cont++;
        
             if (PlayerPrefs.GetInt("_DIF")==1){
-			
-			 if (cont <= 5){
+				cont++;
+				cont++;
+				cont++;
+			Debug.Log("*******************el cont es: " + cont);
+			 if (cont <= 16){
                     puntosActuales += 5;
                     PlayerPrefs.SetInt("_SCORE", puntosActuales);
                     Debug.Log("Puntos");
@@ -323,7 +352,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         else{
                 PlayerPrefs.SetInt("_SCORE", puntosActuales);
                 puntosActuales -= 5;
-                Debug.Log("Usted ha obtenido: " + puntosActuales.ToString() + " puntos");
+              //  Debug.Log("Usted ha obtenido: " + puntosActuales.ToString() + " puntos");
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
                 //recordText = GetComponent<Text>();
                 
@@ -334,12 +363,19 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         }
 		
 		if (PlayerPrefs.GetInt("_DIF")==2){
-			 if (cont <= 10){
+			//cont = (cont-1)/3;
+			cont ++;
+			
+			//cont = cont/3;
+			Debug.Log("*******************el cont es: " + cont);
+			 if (cont <= 28){
                 puntosActuales += 5;
                 PlayerPrefs.SetInt("_SCORE", puntosActuales);
                 UnityEngine.SceneManagement.SceneManager.LoadScene(words[r]);
+				Debug.Log("llegue ------------------------------");
+				
 			//StartCounting();
-        }
+			}
         else{
                 PlayerPrefs.SetInt("_SCORE", puntosActuales);
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
@@ -363,13 +399,17 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         //StartCounting();
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
-		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
-		print ("Dificil");
-        Debug.Log("Estoy aquiiiiiiiiiiii");
+	//	Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+//		print ("Dificil");
+  //      Debug.Log("Estoy aquiiiiiiiiiiii");
         int r = Random.Range(0, 24);
         cont++;
+		//cont = (cont-1)/3;
+		
+		
+		
         print("Contador: " + cont.ToString());
-        if (cont <= 10)
+        if (cont <= 28)
         {
             puntosActuales += 5;
             PlayerPrefs.SetInt("_SCORE", puntosActuales);
@@ -408,19 +448,22 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 		//StartCounting();
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
-		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
-        Debug.Log("Estoy aqui");
-        Debug.Log("InventadasFacil1");
+	//	Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+        //Debug.Log("Estoy aqui");
+        //Debug.Log("InventadasFacil1");
         int r = Random.Range(0, 21);
-        cont++;
+        
         
         if (PlayerPrefs.GetInt("_DIF")==1){
-			
-			 if (cont <= 5){
+			cont++;
+			cont++;
+			cont++;
+			Debug.Log("*******************el cont es: " + cont);
+			 if (cont <= 16){
                     puntosActuales += 5;
                 PlayerPrefs.SetInt("_SCORE", puntosActuales);
-                Debug.Log("Puntos");
-                    Debug.Log(puntosActuales);
+           //     Debug.Log("Puntos");
+             //       Debug.Log(puntosActuales);
                     print(puntosActuales);
                
                 UnityEngine.SceneManagement.SceneManager.LoadScene(difwords[r]);
@@ -437,7 +480,11 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         }
 		
 		if (PlayerPrefs.GetInt("_DIF")==2){
-			 if (cont <= 10){
+			//cont = (cont-1)/3;
+			cont++;
+			
+			Debug.Log("*******************el cont es: " + cont);
+			 if (cont <= 28){
                 puntosActuales += 5;
                 PlayerPrefs.SetInt("_SCORE", puntosActuales);
                 UnityEngine.SceneManagement.SceneManager.LoadScene(difwords[r]);
@@ -467,13 +514,13 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 		//StartCounting();
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
-		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
-		print ("Dificil");
-        Debug.Log("Estoy aqui");
-        int r = Random.Range(0, 24);
+	//	Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
+		//print ("Dificil");
+        //Debug.Log("Estoy aqui");
+        int r = Random.Range(0, 21);
         cont++;
         print("contador: " + cont.ToString());
-        if (cont <= 10)
+        if (cont <= 28)
         {
             puntosActuales += 5;
             PlayerPrefs.SetInt("_SCORE", puntosActuales);
@@ -526,8 +573,9 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
             PlayerPrefs.SetInt("_DIF",0);
        
         PlayerPrefs.SetInt("_SCORE", 0);
-        Debug.Log("El punteo es :" + PlayerPrefs.GetInt("_SCORE"));
+      //  Debug.Log("El punteo es :" + PlayerPrefs.GetInt("_SCORE"));
         cont = 0;
+		PlayerPrefs.SetInt("_CONT", 0);
         puntosActuales = 0;
         _audioSource.PlayOneShot(_audioClip);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Standalone");
@@ -568,8 +616,9 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         PlayerPrefs.SetInt("_DIF", 0);
 
         PlayerPrefs.SetInt("_SCORE", 0);
-        Debug.Log("El punteo es :" + PlayerPrefs.GetInt("_SCORE"));
+      //  Debug.Log("El punteo es :" + PlayerPrefs.GetInt("_SCORE"));
         cont = 0;
+		PlayerPrefs.SetInt("_CONT", 0);
         puntosActuales = 0;
         _audioSource.PlayOneShot(_audioClip);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Standalone");

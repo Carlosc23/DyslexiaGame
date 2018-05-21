@@ -815,6 +815,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 5
+  tim: 0
+  control: 0
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
@@ -1414,6 +1416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 5
+  tim: 0
+  control: 0
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
@@ -1751,7 +1755,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1313609753}
-        m_MethodName: EnterSilabasFacil2
+        m_MethodName: palabraCorrecta2Facil
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2099,6 +2103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 5
+  tim: 0
+  control: 0
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
