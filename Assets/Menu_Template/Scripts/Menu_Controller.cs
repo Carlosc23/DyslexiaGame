@@ -336,8 +336,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
        
             if (PlayerPrefs.GetInt("_DIF")==1){
 				cont++;
-				cont++;
-				cont++;
+				
 			Debug.Log("*******************el cont es: " + cont);
 			 if (cont <= 16){
                     puntosActuales += 5;
@@ -455,8 +454,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         
         
         if (PlayerPrefs.GetInt("_DIF")==1){
-			cont++;
-			cont++;
+			
 			cont++;
 			Debug.Log("*******************el cont es: " + cont);
 			 if (cont <= 16){
