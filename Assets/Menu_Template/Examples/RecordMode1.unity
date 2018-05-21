@@ -568,6 +568,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 15
+  tim: 0
+  control: 0
+  MyButton: {fileID: 0}
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
@@ -1201,6 +1204,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 15
+  tim: 0
+  control: 0
+  MyButton: {fileID: 2030053402}
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
@@ -1312,6 +1318,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 15
+  tim: 0
+  control: 0
+  MyButton: {fileID: 0}
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
@@ -1750,6 +1759,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 15
+  tim: 0
+  control: 0
+  MyButton: {fileID: 0}
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode

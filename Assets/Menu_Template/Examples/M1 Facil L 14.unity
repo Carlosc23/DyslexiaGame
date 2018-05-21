@@ -540,6 +540,7 @@ MonoBehaviour:
   TimeLeft: 5
   tim: 0
   control: 0
+  MyButton: {fileID: 2117729549}
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
@@ -1220,6 +1221,7 @@ MonoBehaviour:
   TimeLeft: 5
   tim: 0
   control: 0
+  MyButton: {fileID: 0}
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
@@ -1711,6 +1713,7 @@ MonoBehaviour:
   TimeLeft: 5
   tim: 0
   control: 0
+  MyButton: {fileID: 0}
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode

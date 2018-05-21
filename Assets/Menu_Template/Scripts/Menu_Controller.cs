@@ -11,6 +11,7 @@ public class Menu_Controller : MonoBehaviour {
 	public int tim;
 	public int control=0;
     public static int puntosActuales = 0;
+	public Button MyButton;
 	public int Dificultad;
     public Text recordText;
 	public string _sceneToLoadOnPlay = "Mode";
@@ -658,14 +659,14 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 		print ("estoy en bmute");
 		if (PlayerPrefs.GetInt("_Mute")==0){
 			_audioSource.PlayOneShot(_audioClip);
-		
+		MyButton.image.color = Color.black;
 		PlayerPrefs.SetInt("_Mute", 1);
 		print(PlayerPrefs.GetInt("_Mute"));
 			
 		}
 		else if (PlayerPrefs.GetInt("_Mute")==1){
 			_audioSource.PlayOneShot(_audioClip);
-		
+		MyButton.image.color = Color.blue;
 		PlayerPrefs.SetInt("_Mute", 0);
 		print(PlayerPrefs.GetInt("_Mute"));
 			
