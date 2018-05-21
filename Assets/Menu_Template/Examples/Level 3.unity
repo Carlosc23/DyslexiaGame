@@ -747,6 +747,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 5
+  tim: 0
+  control: 0
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
@@ -979,6 +981,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 5
+  tim: 0
+  control: 0
   Dificultad: 0
   recordText: {fileID: 0}
   _sceneToLoadOnPlay: Mode
@@ -1289,6 +1293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c9f7b8a1017ae47925680a7be08353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  a: 
 --- !u!114 &1903482322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,6 +1380,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeLeft: 5
+  tim: 0
+  control: 0
   Dificultad: 0
   recordText: {fileID: 1900340469}
   _sceneToLoadOnPlay: Mode
@@ -1696,7 +1703,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "S\xEDlabas\nPuntaje "
+  m_Text: "S\xEDlabas\nPuntaje"
 --- !u!222 &2081403716
 CanvasRenderer:
   m_ObjectHideFlags: 0

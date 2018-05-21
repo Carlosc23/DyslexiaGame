@@ -119,6 +119,8 @@ public class Menu_Controller : MonoBehaviour {
 	}
 	public void palabraIncorrecta1Facil()
     {
+        cont++;
+        cont++;
         PlayerPrefs.SetInt("_STATE", 2);
 		Debug.Log("el estado es incorrecto ..............: " +PlayerPrefs.GetInt("_STATE").ToString());
 		//yield return new WaitForSeconds(10);
@@ -145,6 +147,8 @@ public class Menu_Controller : MonoBehaviour {
 	
     public void palabraIncorrecta2Facil()
     {
+        cont++;
+		cont++;
         PlayerPrefs.SetInt("_STATE", 2);
 		Invoke("tiempoincorrecta2",2);
         
@@ -308,7 +312,7 @@ public class Menu_Controller : MonoBehaviour {
             //Debug.Log("puntos actuales: " + puntosActuales.ToString());
             if (cont > 5)
             {
-                puntosActuales -= 5;
+                //puntosActuales -= 5;
             }
         }
         //siempre reiniciamos el estado al iniciar en una ueva pantalla
@@ -350,7 +354,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         }
         else{
                 PlayerPrefs.SetInt("_SCORE", puntosActuales);
-                puntosActuales -= 5;
+                //puntosActuales -= 5;
               //  Debug.Log("Usted ha obtenido: " + puntosActuales.ToString() + " puntos");
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
                 //recordText = GetComponent<Text>();
@@ -376,7 +380,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 			//StartCounting();
 			}
         else{
-                PlayerPrefs.SetInt("_SCORE", puntosActuales);
+                //PlayerPrefs.SetInt("_SCORE", puntosActuales);
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
         }
 			
@@ -489,6 +493,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 			//StartCounting();
         }
         else{
+
             UnityEngine.SceneManagement.SceneManager.LoadScene("Level 3");
         }
 			
