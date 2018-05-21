@@ -13,7 +13,7 @@ public class Bad_Controllerr : MonoBehaviour {
 	void Start () {
 		
 		fillImg = this.GetComponent<Image>();
-		Debug.Log("logre llegar hasta aca*********************************");
+		//Debug.Log("logre llegar hasta aca*********************************");
 		if (PlayerPrefs.GetInt("_STATE") ==2){
 			fillImg.enabled = true;
 		}else{
@@ -28,7 +28,7 @@ public class Bad_Controllerr : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log("logre llegar hasta aca*********************************UPDATE" + PlayerPrefs.GetInt("_STATE").ToString());
+		//Debug.Log("logre llegar hasta aca*********************************UPDATE" + PlayerPrefs.GetInt("_STATE").ToString());
 		
 		if (PlayerPrefs.GetInt("_STATE") ==2){
 			fillImg.enabled = true;

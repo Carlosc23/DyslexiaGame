@@ -175,8 +175,9 @@ public class Menu_Controller : MonoBehaviour {
 			}
 			else{
 				print ("lost");
-				
-				if (PlayerPrefs.GetInt("_LEV")==1){
+                // puntosActuales -= 5;
+                PlayerPrefs.SetInt("_STATE", 2);
+                if (PlayerPrefs.GetInt("_LEV")==1){
 				EnterInventadasDificil1();	
 					
 				}else if (PlayerPrefs.GetInt("_LEV")==2){
@@ -276,9 +277,18 @@ public class Menu_Controller : MonoBehaviour {
 	//PARA LOS NIVELES DEL MODO 1
 	
 	public void EnterInventadasFacil1(){
-		
-		//siempre reiniciamos el estado al iniciar en una ueva pantalla
-		            PlayerPrefs.SetInt("_STATE", 0);
+        if (PlayerPrefs.GetInt("_STATE") == 2)
+        {
+
+            puntosActuales -= 5;
+            Debug.Log("puntos actuales: " + puntosActuales.ToString());
+            if (cont > 5)
+            {
+                puntosActuales -= 5;
+            }
+        }
+        //siempre reiniciamos el estado al iniciar en una ueva pantalla
+        PlayerPrefs.SetInt("_STATE", 0);
 Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 		
 		//Dificultad=1;
@@ -297,10 +307,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         Debug.Log("InventadasFacil1");
         int r = Random.Range(0, 24);
         cont++;
-        if (PlayerPrefs.GetInt("_STATE") == 2)
-        {
-            // Debe hacer algo
-        }
+       
             if (PlayerPrefs.GetInt("_DIF")==1){
 			
 			 if (cont <= 5){
@@ -314,11 +321,15 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 			//StartCounting();
         }
         else{
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
-                recordText = GetComponent<Text>();
+                PlayerPrefs.SetInt("_SCORE", puntosActuales);
+                puntosActuales -= 5;
                 Debug.Log("Usted ha obtenido: " + puntosActuales.ToString() + " puntos");
-                recordText.text = "";
-                recordText.GetComponent<UnityEngine.UI.Text>().text = "Usted ha obtenido: " + puntosActuales.ToString() + " puntos";
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
+                //recordText = GetComponent<Text>();
+                
+               
+               // recordText.text = "";
+               // recordText.GetComponent<UnityEngine.UI.Text>().text = "Usted ha obtenido: " + puntosActuales.ToString() + " puntos";
             }
         }
 		
@@ -330,7 +341,8 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 			//StartCounting();
         }
         else{
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
+                PlayerPrefs.SetInt("_SCORE", puntosActuales);
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
         }
 			
 			
@@ -343,19 +355,20 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 	public void EnterInventadasDificil1(){
 		Dificultad=2;
 		PlayerPrefs.SetInt("_DIF",2);
-
-		//StartCounting();
+        if (PlayerPrefs.GetInt("_STATE") == 2)
+        {
+            puntosActuales -= 5;
+        }
+        PlayerPrefs.SetInt("_STATE", 0);
+        //StartCounting();
         _audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
 		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
 		print ("Dificil");
-        Debug.Log("Estoy aqui");
+        Debug.Log("Estoy aquiiiiiiiiiiii");
         int r = Random.Range(0, 24);
         cont++;
-        if (PlayerPrefs.GetInt("_STATE") == 2)
-        {
-            // Debe hacer algo
-        }
+        print("Contador: " + cont.ToString());
         if (cont <= 10)
         {
             puntosActuales += 5;
@@ -364,6 +377,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         }
         else
         {
+            PlayerPrefs.SetInt("_SCORE", puntosActuales);
             UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
         }
        
@@ -375,9 +389,12 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 	//PARA LOS NIVELES DE MODO 2
 	
 	public void EnterSilabasFacil2(){
-		
-		//siempre reiniciamos el estado al inciiar el nivel 
-		        PlayerPrefs.SetInt("_STATE", 0);
+        if (PlayerPrefs.GetInt("_STATE") == 2)
+        {
+            puntosActuales -= 5;
+        }
+        //siempre reiniciamos el estado al inciiar el nivel 
+        PlayerPrefs.SetInt("_STATE", 0);
 				Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 		
 		//Dificultad=1;
@@ -396,10 +413,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         Debug.Log("InventadasFacil1");
         int r = Random.Range(0, 21);
         cont++;
-        if (PlayerPrefs.GetInt("_STATE") == 2)
-        {
-            // Debe hacer algo
-        }
+        
         if (PlayerPrefs.GetInt("_DIF")==1){
 			
 			 if (cont <= 5){
@@ -413,11 +427,12 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 			//StartCounting();
         }
         else{
+                PlayerPrefs.SetInt("_SCORE", puntosActuales);
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Level 3");
                 recordText = GetComponent<Text>();
                 Debug.Log("Usted ha obtenido: " + puntosActuales.ToString() + " puntos");
-                recordText.text = "";
-                recordText.GetComponent<UnityEngine.UI.Text>().text = "Usted ha obtenido: " + puntosActuales.ToString() + " puntos";
+               // recordText.text = "";
+              //  recordText.GetComponent<UnityEngine.UI.Text>().text = "Usted ha obtenido: " + puntosActuales.ToString() + " puntos";
             }
         }
 		
@@ -440,7 +455,13 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
     }
 	
 	public void EnterSilabasDificil2(){
-		Dificultad=2;
+        if (PlayerPrefs.GetInt("_STATE") == 2)
+        {
+            // Debe hacer algo
+            puntosActuales -= 5;
+        }
+        PlayerPrefs.SetInt("_STATE", 0);
+        Dificultad =2;
 		PlayerPrefs.SetInt("_DIF",2);
 
 		//StartCounting();
@@ -451,10 +472,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         Debug.Log("Estoy aqui");
         int r = Random.Range(0, 24);
         cont++;
-        if (PlayerPrefs.GetInt("_STATE") == 2)
-        {
-            // Debe hacer algo
-        }
+        print("contador: " + cont.ToString());
         if (cont <= 10)
         {
             puntosActuales += 5;
@@ -463,6 +481,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         }
         else
         {
+            PlayerPrefs.SetInt("_SCORE", puntosActuales);
             UnityEngine.SceneManagement.SceneManager.LoadScene("Level 3");
         }
        
