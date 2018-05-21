@@ -659,7 +659,11 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 		print ("estoy en bmute");
 		if (PlayerPrefs.GetInt("_Mute")==0){
 			_audioSource.PlayOneShot(_audioClip);
-		MyButton.image.color = Color.black;
+            Color c = Color.blue;
+            c.a=0;
+		MyButton.image.color = c;
+        
+        
 		PlayerPrefs.SetInt("_Mute", 1);
 		print(PlayerPrefs.GetInt("_Mute"));
 			
