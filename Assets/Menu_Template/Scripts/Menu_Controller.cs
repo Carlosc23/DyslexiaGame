@@ -222,13 +222,13 @@ public class Menu_Controller : MonoBehaviour {
 	
 	
 	public void OpenWebpage () {
-		_audioSource.PlayOneShot(_audioClip);
+		//_audioSource.PlayOneShot(_audioClip);
 		Application.OpenURL(_webpageURL);
 	}
 	
 	public void PlayGame () {
 		PlayerPrefs.SetInt("_DIF",0);
-		_audioSource.PlayOneShot(_audioClip);
+		//_audioSource.PlayOneShot(_audioClip);
 		PlayerPrefs.SetString("_LastScene", scene.name);
 		//Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
 		UnityEngine.SceneManagement.SceneManager.LoadScene("Mode");
@@ -237,13 +237,13 @@ public class Menu_Controller : MonoBehaviour {
 	public void EnterRecords(){
 					PlayerPrefs.SetInt("_DIF",0);
 
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
 //		Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoadOnPlay2);
     }
     public void EnterLevelm1(){
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
 		PlayerPrefs.SetInt("_LEV",1);
         PlayerPrefs.SetInt("_SCORE", 0);
         PlayerPrefs.SetString("_LastScene", scene.name);
@@ -252,49 +252,49 @@ public class Menu_Controller : MonoBehaviour {
     }
     public void EnterRecordm1()
     {
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
         //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("RecordMode1");
     }
     public void EnterRecordm1E()
     {
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
         //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Record 1");
     }
     public void EnterRecordm1H()
     {
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
         //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Record 3");
     }
     public void EnterRecordm2()
     {
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
         //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("RecordMode2");
     }
     public void EnterRecordm2E()
     {
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
         //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Record 2");
     }
     public void EnterRecordm2H()
     {
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
         //Debug.Log("es" + PlayerPrefs.GetString("_LastScene"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("Record 4");
     }
 
     public void EnterLevelm2() {
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetInt("_LEV",2);
         PlayerPrefs.SetInt("_SCORE", 0);
         PlayerPrefs.SetString("_LastScene", scene.name);
@@ -329,7 +329,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 			}
 		//print ("dificultad"+Dificultad);
 		//StartCounting();
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
 		//Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         //Debug.Log("Estoy aqui");
@@ -401,7 +401,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         }
         PlayerPrefs.SetInt("_STATE", 0);
         //StartCounting();
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
 	//	Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
 //		print ("Dificil");
@@ -450,7 +450,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 			}
 		print ("dificultad"+Dificultad);
 		//StartCounting();
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
 	//	Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
         //Debug.Log("Estoy aqui");
@@ -516,7 +516,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 		PlayerPrefs.SetInt("_DIF",2);
 
 		//StartCounting();
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         PlayerPrefs.SetString("_LastScene", scene.name);
 	//	Debug.Log("es" +PlayerPrefs.GetString("_LastScene"));
 		//print ("Dificil");
@@ -581,7 +581,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         cont = 0;
 		PlayerPrefs.SetInt("_CONT", 0);
         puntosActuales = 0;
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Standalone");
     }
     public void BackToMain2()
@@ -624,20 +624,20 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
         cont = 0;
 		PlayerPrefs.SetInt("_CONT", 0);
         puntosActuales = 0;
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Standalone");
     }
     public void BackToMode(){
 					PlayerPrefs.SetInt("_DIF",0);
 
-        _audioSource.PlayOneShot(_audioClip);
+        //_audioSource.PlayOneShot(_audioClip);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Mode");
     }
 	
 	
 	
     public void Mute () {
-		_audioSource.PlayOneShot(_audioClip);
+		//_audioSource.PlayOneShot(_audioClip);
 		_soundButtons[0].interactable = true;
 		_soundButtons[1].interactable = false;
 		PlayerPrefs.SetInt("_Mute", 1);
@@ -645,7 +645,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 	}
 	
 	public void Unmute () {
-		_audioSource.PlayOneShot(_audioClip);
+		//_audioSource.PlayOneShot(_audioClip);
 		_soundButtons[0].interactable = false;
 		_soundButtons[1].interactable = true;
 		PlayerPrefs.SetInt("_Mute", 0);
@@ -658,7 +658,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 		print(PlayerPrefs.GetInt("_Mute"));
 		print ("estoy en bmute");
 		if (PlayerPrefs.GetInt("_Mute")==0){
-			_audioSource.PlayOneShot(_audioClip);
+			//_audioSource.PlayOneShot(_audioClip);
             Color c = Color.gray;
             c.a=0;
 		MyButton.image.color = c;
@@ -669,7 +669,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 			
 		}
 		else if (PlayerPrefs.GetInt("_Mute")==1){
-			_audioSource.PlayOneShot(_audioClip);
+			//_audioSource.PlayOneShot(_audioClip);
 		MyButton.image.color = Color.blue;
 		PlayerPrefs.SetInt("_Mute", 0);
 		print(PlayerPrefs.GetInt("_Mute"));
@@ -680,7 +680,7 @@ Debug.Log("el estado es : " +PlayerPrefs.GetInt("_STATE").ToString());
 	}
 	
 	public void QuitGame () {
-		_audioSource.PlayOneShot(_audioClip);
+		//_audioSource.PlayOneShot(_audioClip);
 		#if !UNITY_EDITOR
 			Application.Quit();
 		#endif
