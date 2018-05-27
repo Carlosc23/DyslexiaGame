@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Menu_Template/Examples/Mobile.unity
     guid: 96074949a92b99743a64b16864ec2c68
   - enabled: 1
