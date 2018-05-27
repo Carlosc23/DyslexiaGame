@@ -1793,9 +1793,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Seleccion de
-
-    silabas'
+  m_Text: "Selecci\xF3n de\ns\xEDlabas"
 --- !u!222 &1739334394
 CanvasRenderer:
   m_ObjectHideFlags: 0
