@@ -51,6 +51,29 @@ public class Menu_Controller : MonoBehaviour {
 			print(PlayerPrefs.GetInt("_Mute"));
 			PlayerPrefs.SetInt("_Mute", 0);
 		}
+        else if (PlayerPrefs.HasKey("_Mute"))
+        {
+            if (PlayerPrefs.GetInt("_Mute") == 1)
+            {
+                //_audioSource.PlayOneShot(_audioClip);
+                Color c = Color.gray;
+                c.a = 0;
+                MyButton.image.color = c;
+
+
+                PlayerPrefs.SetInt("_Mute", 1);
+                print(PlayerPrefs.GetInt("_Mute"));
+
+            }
+            else if (PlayerPrefs.GetInt("_Mute") == 0)
+            {
+                //_audioSource.PlayOneShot(_audioClip);
+                MyButton.image.color = Color.blue;
+                PlayerPrefs.SetInt("_Mute", 0);
+                print(PlayerPrefs.GetInt("_Mute"));
+
+            }
+        }
 		
 		if (!PlayerPrefs.HasKey("_DIF")){
 			PlayerPrefs.SetInt("_DIF",0);
